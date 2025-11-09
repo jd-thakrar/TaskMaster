@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - TaskMaster</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100 py-4">
+      <div class="col-md-10 col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold mb-2 color-primary">
+                <i class="fas fa-tasks me-2"></i>TaskMaster
+              </h2>
+              <p class="text-muted">Create your account</p>
+            </div>
+
+            <form id="registerForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="fullName" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="fullName" placeholder="John Doe">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="johndoe">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="text" class="form-control" id="email" placeholder="example@example.com">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="dob" class="form-label">Date of Birth</label>
+                  <input type="date" class="form-control" id="dob">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="••••••••">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="confirmPassword" class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="••••••••">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" id="phone" placeholder="(123) 456-7890">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="company" class="form-label">Company Name</label>
+                  <input type="text" class="form-control" id="company" placeholder="Your Company Name">
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" id="address" rows="2" placeholder="Street, City, State"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="language" class="form-label">Preferred Language</label>
+                <select class="form-select" id="language">
+                  <option value="">Select your preferred language</option>
+                  <option value="en">English</option>
+                  <option value="es">Spanish</option>
+                  <option value="fr">French</option>
+                  <option value="de">German</option>
+                  <option value="it">Italian</option>
+                  <option value="pt">Portuguese</option>
+                  <option value="zh">Chinese</option>
+                  <option value="ja">Japanese</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="role" class="form-label">Role</label>
+                <select class="form-select" id="role">
+                  <option value="">Select your role</option>
+                  <option value="user">User</option>
+                  <option value="manager">Manager</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="profilePic" class="form-label">Profile Picture</label>
+                <input type="file" class="form-control" id="profilePic" accept="image/*">
+              </div>
+
+              <div class="mb-4 form-check">
+                <input type="checkbox" class="form-check-input" id="terms">
+                <label class="form-check-label" for="terms">
+                  I agree to the <a href="#" class="text-decoration-none">Terms and Conditions</a> and <a href="#" class="text-decoration-none">Privacy Policy</a>
+                </label>
+              </div>
+
+              <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+              </div>
+            </form>
+
+            <div class="text-center mt-4">
+              <p class="text-muted">Already have an account? 
+                <a href="login.html" class="text-decoration-none">Sign in here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="validation.js"></script>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (validateRegisterForm()) {
+        const fullName = document.getElementById('fullName').value;
+        alert(`Registration successful!\nWelcome ${fullName}!\nPlease sign in with your credentials.`);
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+</body>
+</html>

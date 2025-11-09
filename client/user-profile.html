@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TaskMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Updated stylesheet path for client folder -->
+    <link href="../styles.css" rel="stylesheet">
+<style>
+        .custom-navbar {
+            background: linear-gradient(135deg, #164e63 0%, #1e5a73 100%);
+            box-shadow: 0 2px 20px rgba(22, 78, 99, 0.15);
+            border: none;
+            padding: 0.75rem 0;
+        }
+        .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        .nav-link {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8) !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+        .nav-link:hover {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        .nav-link.active {
+            color: white !important;
+            background-color: rgba(77, 182, 172, 0.2);
+            border: 1px solid rgba(77, 182, 172, 0.3);
+        }
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .user-info {
+            font-family: 'DM Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+        .btn-logout {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-logout:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-1px);
+        }
+        .profile-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+        .profile-link:hover {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        .profile-pic {
+            transition: all 0.3s ease;
+        }
+        .profile-link:hover .profile-pic {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Updated navbar links to point to client folder -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="user-dashboard.html">
+                <i class="fas fa-tasks me-2" style="color: #4db6ac;"></i>TaskMaster
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="user-dashboard.html">
+                            <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-tasks.html">
+                            <i class="fas fa-tasks me-2"></i>My Tasks
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-time-tracking.html">
+                            <i class="fas fa-clock me-2"></i>Time Tracking
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="user-projects.html">
+                            <i class="fas fa-project-diagram me-2"></i>Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-notifications.html">
+                            <i class="fas fa-bell me-2"></i>Notifications
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <a href="user-profile.html" class="profile-link d-flex align-items-center text-decoration-none active">
+                        <!-- Updated image path for client folder -->
+                        <img src="../img/dummy-image.webp" 
+                             alt="Profile Picture" 
+                             class="profile-pic rounded-circle me-2"
+                             style="width: 40px; height: 40px; object-fit: cover; border: 2px solid rgba(255,255,255,0.3);">
+                        <span class="user-info d-none d-md-block">Jeet Kumar</span>
+                    </a>
+                    <!-- Updated logout link to point to root -->
+                    <a class="btn btn-logout btn-sm" href="../login.html">
+                        <i class="fas fa-sign-out-alt me-1"></i>Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+        <div class="container-fluid px-4 py-4">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h1 class="fw-bold mb-2 text-balance">My Profile</h1>
+                <p class="text-muted mb-0">Manage your personal information and account settings</p>
+            </div>
+            <div class="d-flex gap-3">
+                <button id="userSaveBtn" class="btn btn-primary">
+                    <i class="fas fa-save me-2"></i>Save Changes
+                </button>
+                <button class="btn btn-outline-secondary">
+                    <i class="fas fa-times me-2"></i>Cancel
+                </button>
+            </div>
+        </div>
+
+        <!-- Clean profile layout -->
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="dashboard-card p-4 text-center">
+                    <div class="mb-4">
+                        <img src="/img/dummy-image.webp" 
+                             alt="Profile Photo" class="rounded-circle mb-3" width="120" height="120">
+                        <h4 class="fw-bold mb-1">Jeet Kumar</h4>
+                        <p class="text-muted mb-0">Software Developer</p>
+                        <small class="text-muted">Member since Jan 2024</small>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-primary">
+                            <i class="fas fa-camera me-2"></i>Update Photo
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            <i class="fas fa-trash me-2"></i>Remove Photo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card p-4 mt-4">
+                    <h5 class="fw-bold mb-3">Quick Stats</h5>
+                    <div class="row g-3">
+                        <div class="col-6 text-center">
+                            <h4 class="fw-bold mb-1" style="color: #164e63;">47</h4>
+                            <small class="text-muted">Tasks Completed</small>
+                        </div>
+                        <div class="col-6 text-center">
+                            <h4 class="fw-bold mb-1" style="color: #4db6ac;">6</h4>
+                            <small class="text-muted">Active Projects</small>
+                        </div>
+                        <div class="col-6 text-center">
+                            <h4 class="fw-bold mb-1 text-success">156h</h4>
+                            <small class="text-muted">Time Tracked</small>
+                        </div>
+                        <div class="col-6 text-center">
+                            <h4 class="fw-bold mb-1 text-warning">92%</h4>
+                            <small class="text-muted">Completion Rate</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-8">
+                <div class="dashboard-card">
+                    <div class="p-4 border-bottom">
+                        <h4 class="fw-bold mb-0">Personal Information</h4>
+                    </div>
+                    <div class="p-4">
+                        <form id="userProfileForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">First Name</label>
+                                    <input type="text" class="form-control" id="userFirstName" value="Jeet">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Last Name</label>
+                                    <input type="text" class="form-control" id="userLastName" value="Kumar">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Email Address</label>
+                                    <input type="text" class="form-control" id="userEmail" value="jeet.kumar@example.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Phone Number</label>
+                                    <input type="text" class="form-control" id="userPhone" value="+1 (555) 123-4567">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Job Title</label>
+                                    <input type="text" class="form-control" id="userJobTitle" value="Software Developer">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Department</label>
+                                    <select class="form-select">
+                                        <option>Engineering</option>
+                                        <option>Design</option>
+                                        <option>Marketing</option>
+                                        <option>Sales</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Bio</label>
+                                    <textarea class="form-control" rows="3" placeholder="Tell us about yourself...">Passionate software developer with 5+ years of experience in web development. Specializing in React, Node.js, and modern web technologies.</textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card mt-4">
+                    <div class="p-4 border-bottom">
+                        <h4 class="fw-bold mb-0">Account Security</h4>
+                    </div>
+                    <div class="p-4">
+                        <form id="userPasswordForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Current Password</label>
+                                    <!-- Removed required attribute for proper validation display -->
+                                    <input type="password" class="form-control" id="userCurrentPassword" placeholder="Enter current password">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">New Password</label>
+                                    <!-- Removed required attribute for proper validation display -->
+                                    <input type="password" class="form-control" id="userNewPassword" placeholder="Enter new password">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Confirm New Password</label>
+                                    <!-- Removed required attribute for proper validation display -->
+                                    <input type="password" class="form-control" id="userConfirmPassword" placeholder="Confirm new password">
+                                </div>
+                                <div class="col-md-6 d-flex align-items-end">
+                                    <button type="button" id="userUpdatePasswordBtn" class="btn btn-outline-primary w-100">
+                                        <i class="fas fa-key me-2"></i>Update Password
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card mt-4">
+                    <div class="p-4 border-bottom">
+                        <h4 class="fw-bold mb-0">Preferences</h4>
+                    </div>
+                    <div class="p-4">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Time Zone</label>
+                                <select class="form-select">
+                                    <option>UTC-05:00 (Eastern Time)</option>
+                                    <option>UTC-08:00 (Pacific Time)</option>
+                                    <option>UTC+00:00 (GMT)</option>
+                                    <option>UTC+05:30 (India Standard Time)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Language</label>
+                                <select class="form-select">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                    <label class="form-check-label fw-semibold" for="emailNotifications">
+                                        Email Notifications
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="taskReminders" checked>
+                                    <label class="form-check-label fw-semibold" for="taskReminders">
+                                        Task Deadline Reminders
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-5 py-4" style="background-color: #f8f9fa; border-top: 1px solid #e9ecef;">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 TaskMaster. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end gap-4 mt-2 mt-md-0">
+                        <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+                        <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                        <a href="#" class="text-muted text-decoration-none">Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../validation.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        setupPasswordFieldListeners();
+      });
+
+      document.getElementById('userSaveBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (validateUserProfileForm()) {
+          alert('Profile updated successfully!');
+        }
+      });
+
+      document.getElementById('userUpdatePasswordBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+
+        if (validatePasswordUpdate("userPasswordForm")) {
+          clearAllErrors("userPasswordForm");
+          alert('Password updated successfully!');
+          document.getElementById('userPasswordForm').reset();
+          setupPasswordFieldListeners();
+        }
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Professional Task Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Updated stylesheet path for landing folder -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Enhanced navigation with Apple-style glassmorphism -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-tasks me-2"></i>TaskMaster
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="landing/features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="landing/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="landing/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-outline-primary" href="login.html">Sign In</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary" href="#pricing">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced hero section with Apple-style spacing and improved mobile layout -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6">
+                    <div class="py-5">
+                        <h1 class="display-3 fw-bold mb-4 text-balance">
+                            Think Different,
+                            <br>
+                            Work Smarter
+                        </h1>
+                        <p class="lead mb-5 text-pretty" style="font-size: 1.125rem; line-height: 1.6; color: var(--muted-foreground);">
+                           The most intuitive task management platform designed for  <br>
+modern teams who demand excellence.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 mb-5">
+                            <a href="#pricing" class="btn btn-primary btn-lg">
+                                Start Free Trial
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                            <a href="../landing/features.html" class="btn btn-outline-primary btn-lg">
+                                Explore Features
+                            </a>
+                        </div>
+                        <!-- Enhanced stats section with better responsive design -->
+                        <div class="row text-center mt-5 pt-4 g-3">
+                            <div class="col-4">
+                                <div class="mb-2">
+                                    <h3 class="fw-bold mb-1" style="color: var(--primary);">50K+</h3>
+                                    <p class="text-muted mb-0 small">Happy Users</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-2">
+                                    <h3 class="fw-bold mb-1" style="color: var(--primary);">4.9★</h3>
+                                    <p class="text-muted mb-0 small">App Store Rating</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-2">
+                                    <h3 class="fw-bold mb-1" style="color: var(--primary);">99.9%</h3>
+                                    <p class="text-muted mb-0 small">Uptime SLA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <!-- Updated hero image with Apple-style rounded corners and shadow -->
+                        <div class="position-relative">
+                            <img src="img/dashboard.png" 
+                                 alt="TaskMaster Dashboard" class="img-fluid" style="border-radius: 20px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Refined features section with Apple-style cards and improved mobile layout -->
+    <section class="py-5" style="padding: 120px 0 !important;">
+        <div class="container">
+            <div class="text-center mb-5 pb-4">
+                <h2 class="display-5 fw-bold mb-4">Designed for excellence</h2>
+                <p class="lead mx-auto" style="max-width: 600px; color: var(--muted-foreground);">
+                    Every feature crafted with precision to enhance your productivity
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="mb-4">
+                                <div class="d-inline-flex align-items-center justify-content-center rounded-circle" 
+                                     style="width: 80px; height: 80px; background-color: var(--secondary);">
+                                    <i class="fas fa-bolt fa-2x" style="color: var(--primary);"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Lightning Fast</h5>
+                            <p class="card-text">
+                                Experience instant responses with our optimized architecture. 
+                                Every interaction feels immediate and natural.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="mb-4">
+                                <div class="d-inline-flex align-items-center justify-content-center rounded-circle" 
+                                     style="width: 80px; height: 80px; background-color: var(--secondary);">
+                                    <i class="fas fa-users fa-2x" style="color: var(--primary);"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Team Harmony</h5>
+                            <p class="card-text">
+                                Collaborate effortlessly with real-time sync, 
+                                shared workspaces, and intelligent notifications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="mb-4">
+                                <div class="d-inline-flex align-items-center justify-content-center rounded-circle" 
+                                     style="width: 80px; height: 80px; background-color: var(--secondary);">
+                                    <i class="fas fa-shield-alt fa-2x" style="color: var(--primary);"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Privacy First</h5>
+                            <p class="card-text">
+                                Your data is protected with enterprise-grade encryption 
+                                and zero-knowledge architecture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced pricing section with Apple-style design and better mobile responsiveness -->
+    <section id="pricing" class="py-5 bg-gradient-subtle" style="padding: 120px 0 !important;">
+        <div class="container">
+            <div class="text-center mb-5 pb-4">
+                <h2 class="display-5 fw-bold mb-4">Choose your plan</h2>
+                <p class="lead" style="color: var(--muted-foreground);">Simple, transparent pricing that grows with you</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold mb-4">Starter</h5>
+                            <div class="mb-4">
+                                <span class="display-6 fw-bold">$12</span>
+                                <span class="text-muted fs-5">/month</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Up to 5 team members
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    20GB secure storage
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Essential reporting
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Email support
+                                </li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100 btn-lg">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-premium" style="border: 1px solid var(--primary);">
+                        <div class="card-header text-center py-3" style="background-color: var(--primary); color: var(--primary-foreground); border-radius: 16px 16px 0 0;">
+                            <small class="fw-bold">MOST POPULAR</small>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold mb-4">Professional</h5>
+                            <div class="mb-4">
+                                <span class="display-6 fw-bold">$39</span>
+                                <span class="text-muted fs-5">/month</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Up to 25 team members
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    200GB secure storage
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Advanced analytics
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Priority support
+                                </li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100 btn-lg">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold mb-4">Enterprise</h5>
+                            <div class="mb-4">
+                                <span class="display-6 fw-bold">$99</span>
+                                <span class="text-muted fs-5">/month</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Unlimited members
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Unlimited storage
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Custom integrations
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-3" style="color: #34c759;"></i>
+                                    Dedicated support
+                                </li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100 btn-lg">Contact Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced testimonials with Apple-style design -->
+    <section class="py-5" style="padding: 120px 0 !important;">
+        <div class="container">
+            <div class="text-center mb-5 pb-4">
+                <h2 class="display-5 fw-bold mb-4">Loved by teams worldwide</h2>
+                <p class="lead" style="color: var(--muted-foreground);">Join thousands of satisfied customers</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div style="color: #ff9500;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="card-text mb-4">
+                                "TaskMaster transformed how our team collaborates. The interface is intuitive, 
+                                and the performance is exceptional. Couldn't be happier."
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <img src="img/dummy-image.webp" 
+                                     alt="Isha Mehra" class="rounded-circle me-3" style="width: 48px; height: 48px;">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Isha Mehra</h6>
+                                    <small class="text-muted">Product Manager, TechCorp</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div style="color: #ff9500;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="card-text mb-4">
+                                "The attention to detail is remarkable. Every feature feels thoughtfully designed. 
+                                Our productivity has increased significantly since switching."
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <img src="img/dummy-image.webp" 
+                                     alt="Sinjay Kumar" class="rounded-circle me-3" style="width: 48px; height: 48px;">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Sinjay Kumar</h6>
+                                    <small class="text-muted">Engineering Lead, StartupXYZ</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div style="color: #ff9500;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="card-text mb-4">
+                                "Outstanding support and continuous improvements. TaskMaster sets the standard 
+                                for what project management software should be."
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <img src="img/dummy-image.webp" 
+                                     alt="Raja Sinha" class="rounded-circle me-3" style="width: 48px; height: 48px;">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Raja Sinha</h6>
+                                    <small class="text-muted">CEO, InnovateLabs</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced footer with Apple-style design -->
+<footer style="background:#f8f9fa;border-top:1px solid #dee2e6;padding:40px 0;">
+  <div class="container">
+    
+    <!-- One line with three columns -->
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:20px;">
+      
+      <!-- TaskMaster -->
+      <div style="flex:1;min-width:200px;">
+        <h5 style="display:flex;align-items:center;font-size:1.25rem;margin-bottom:15px;">
+          <i class="fas fa-tasks" style="color:var(--primary);margin-right:8px;"></i>TaskMaster
+        </h5>
+        <p style="max-width:400px;color:var(--muted-foreground);line-height:1.6;margin:0;">
+          The most intuitive task management platform designed for modern teams who value simplicity and efficiency.
+        </p>
+      </div>
+      
+      <!-- Product links -->
+      <div style="flex:1;min-width:150px;">
+        <h6 style="font-weight:bold;margin-bottom:15px;">Product</h6>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li style="margin-bottom:8px;"><a href="landing/features.html" style="color:var(--muted-foreground);text-decoration:none;">Features</a></li>
+          <li style="margin-bottom:8px;"><a href="#pricing" style="color:var(--muted-foreground);text-decoration:none;">Pricing</a></li>
+          <li style="margin-bottom:8px;"><a href="landing/about.html" style="color:var(--muted-foreground);text-decoration:none;">About</a></li>
+          <li style="margin-bottom:0;"><a href="landing/contact.html" style="color:var(--muted-foreground);text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Get in touch -->
+      <div style="flex:1;min-width:200px;">
+        <h6 style="font-weight:bold;margin-bottom:15px;">Get in touch</h6>
+        <p style="margin:0 0 8px 0;color:var(--muted-foreground);"><i class="fas fa-envelope" style="color:var(--primary);margin-right:6px;"></i>jd.thakrar05@gmail.com</p>
+        <p style="margin:0 0 8px 0;color:var(--muted-foreground);"><i class="fas fa-phone" style="color:var(--primary);margin-right:6px;"></i>+91 96244 49764</p>
+        <p style="margin:0;color:var(--muted-foreground);"><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:6px;"></i>San Francisco, California</p>
+      </div>
+      
+    </div>
+    
+    <!-- Copyright -->
+    <div style="text-align:center;margin-top:30px;">
+      <p style="color:var(--muted-foreground);font-size:0.9rem;margin:0;">
+        © 2025 TaskMaster. All rights reserved.
+      </p>
+    </div>
+    
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

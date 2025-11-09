@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TaskMaster Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Updated stylesheet path for admin folder -->
+    <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-checkbox">
+    
+    <label for="mobile-nav-toggle" class="mobile-nav-toggle">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </label>
+    
+    <div class="sidebar-overlay"></div>
+
+    <div class="sidebar">
+        <div class="p-4 border-bottom border-secondary pad">
+            <h4 class="text-white fw-bold mb-2">
+                <i class="fas fa-tasks me-2" style="color: var(--secondary);"></i>TaskMaster
+            </h4>
+            <p class="text-white-50 small mb-0">Administrator</p>
+        </div>
+        
+        <nav class="nav flex-column p-2">
+            <!-- Updated admin links to point to admin folder -->
+            <a class="nav-link " href="admin-dashboard.html">
+                <i class="fas fa-tachometer-alt me-3"></i>Dashboard
+            </a>
+            <a class="nav-link" href="admin-tasks.html">
+                <i class="fas fa-tasks me-3"></i>Task Management
+            </a>
+            <a class="nav-link" href="admin-team.html">
+                <i class="fas fa-users me-3"></i>Team Management
+            </a>
+            <a class="nav-link " href="admin-projects.html">
+                <i class="fas fa-project-diagram me-3"></i>Projects
+            </a>
+            <a class="nav-link" href="admin-notifications.html">
+                <i class="fas fa-bell me-3"></i>Notifications
+            </a>
+            <a class="nav-link active" href="admin-profile.html">
+                <i class="fas fa-user-circle me-3"></i>Profile
+            </a>
+            <div class="mt-auto pt-4">
+                <!-- Updated logout link to point to root -->
+                <a class="nav-link" href="../login.html">
+                    <i class="fas fa-sign-out-alt me-3"></i>Logout
+                </a>
+            </div>
+        </nav>
+    </div>    
+    <div class="main-content">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <div>
+        <h1 class="fw-bold mb-2">My Profile</h1>
+        <p class="text-muted mb-0">Manage your personal information and account settings</p>
+      </div>
+      <div class="d-flex gap-3">
+        <!-- Added id and click handler to save button -->
+        <button type="button" id="saveBtN" class="btn btn-primary"><i class="fas fa-save me-2"></i>Save Changes</button>
+        <button class="btn btn-outline-primary"><i class="fas fa-times me-2"></i>Cancel</button>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="dashboard-card p-4 text-center">
+          <div class="mb-4">
+            <img src="../img/dummy-image.webp" alt="Profile Photo" class="rounded-circle mb-3" width="120" height="120">
+            <h4 class="fw-bold mb-1">Jeet Kumar</h4>
+            <p class="text-muted mb-0">Administrator</p>
+            <small class="text-muted">Member since Jan 2024</small>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-primary"><i class="fas fa-camera me-2"></i>Update Photo</button>
+            <button class="btn btn-outline-danger"><i class="fas fa-trash me-2"></i>Remove Photo</button>
+          </div>
+        </div>
+
+        <div class="dashboard-card p-4 mt-4">
+          <h5 class="fw-bold mb-3">Quick Stats</h5>
+          <div class="row g-3">
+            <div class="col-6 text-center">
+              <h4 class="fw-bold mb-1" style="color: var(--primary);">47</h4>
+              <small class="text-muted">Tasks Completed</small>
+            </div>
+            <div class="col-6 text-center">
+              <h4 class="fw-bold mb-1" style="color: var(--primary);">6</h4>
+              <small class="text-muted">Active Projects</small>
+            </div>
+            <div class="col-6 text-center">
+              <h4 class="fw-bold mb-1 text-success">156h</h4>
+              <small class="text-muted">Time Tracked</small>
+            </div>
+            <div class="col-6 text-center">
+              <h4 class="fw-bold mb-1 text-warning">92%</h4>
+              <small class="text-muted">Completion Rate</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="dashboard-card">
+          <div class="p-4 border-bottom">
+            <h4 class="fw-bold mb-0">Personal Information</h4>
+          </div>
+          <div class="p-4">
+            <form id="profileForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">First Name</label>
+                  <input type="text" class="form-control" id="firstName" value="Jeet">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" value="Kumar">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Email Address</label>
+                  <input type="text" class="form-control" id="email" value="jeet.kumar@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Phone Number</label>
+                  <input type="text" class="form-control" id="phone" value="+1 (555) 123-4567">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Job Title</label>
+                  <input type="text" class="form-control" id="jobTitle" value="Administrator">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Department</label>
+                  <select class="form-select">
+                    <option>Operations</option>
+                    <option>Engineering</option>
+                    <option>Design</option>
+                    <option>Marketing</option>
+                    <option>Sales</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Bio</label>
+                  <textarea class="form-control" rows="3" placeholder="Tell us about yourself...">Admin focused on smooth operations, collaboration, and delivery.</textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="dashboard-card mt-4">
+          <div class="p-4 border-bottom">
+            <h4 class="fw-bold mb-0">Account Security</h4>
+          </div>
+          <div class="p-4">
+            <form id="passwordForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Current Password</label>
+                  <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">New Password</label>
+                  <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Confirm New Password</label>
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
+                </div>
+                <div class="col-md-6 d-flex align-items-end">
+                  <button type="button" id="updatePasswordBtn" class="btn btn-outline-primary w-100">
+                    <i class="fas fa-key me-2"></i>Update Password
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="dashboard-card mt-4">
+          <div class="p-4 border-bottom">
+            <h4 class="fw-bold mb-0">Preferences</h4>
+          </div>
+          <div class="p-4">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Time Zone</label>
+                <select class="form-select">
+                  <option>UTC-05:00 (Eastern Time)</option>
+                  <option>UTC-08:00 (Pacific Time)</option>
+                  <option>UTC+00:00 (GMT)</option>
+                  <option>UTC+05:30 (India Standard Time)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Language</label>
+                <select class="form-select">
+                  <option>English</option>
+                  <option>Spanish</option>
+                  <option>French</option>
+                  <option>German</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                  <label class="form-check-label fw-semibold" for="emailNotifications">Email Notifications</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="taskReminders" checked>
+                  <label class="form-check-label fw-semibold" for="taskReminders">Task Deadline Reminders</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../validation.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        setupPasswordFieldListeners();
+      });
+
+      document.getElementById('saveBtN').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (validateProfileForm()) {
+          alert('Profile updated successfully!');
+        }
+      });
+
+      document.getElementById('updatePasswordBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+
+        if (validatePasswordUpdate("passwordForm")) {
+          clearAllErrors("passwordForm");
+          alert('Password updated successfully!');
+          document.getElementById('passwordForm').reset();
+          setupPasswordFieldListeners();
+        }
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - TaskMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Updated stylesheet path for client folder -->
+    <link href="../styles.css" rel="stylesheet">
+<style>
+        .custom-navbar {
+            background: linear-gradient(135deg, #164e63 0%, #1e5a73 100%);
+            box-shadow: 0 2px 20px rgba(22, 78, 99, 0.15);
+            border: none;
+            padding: 0.75rem 0;
+        }
+        .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        .nav-link {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8) !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+        .nav-link:hover {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        .nav-link.active {
+            color: white !important;
+            background-color: rgba(77, 182, 172, 0.2);
+            border: 1px solid rgba(77, 182, 172, 0.3);
+        }
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .user-info {
+            font-family: 'DM Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+        .btn-logout {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-logout:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-1px);
+        }
+        .profile-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+        .profile-link:hover {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        .profile-pic {
+            transition: all 0.3s ease;
+        }
+        .profile-link:hover .profile-pic {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Updated navbar links to point to client folder -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="user-dashboard.html">
+                <i class="fas fa-tasks me-2" style="color: #4db6ac;"></i>TaskMaster
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="user-dashboard.html">
+                            <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-tasks.html">
+                            <i class="fas fa-tasks me-2"></i>My Tasks
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-time-tracking.html">
+                            <i class="fas fa-clock me-2"></i>Time Tracking
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="user-projects.html">
+                            <i class="fas fa-project-diagram me-2"></i>Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="user-notifications.html">
+                            <i class="fas fa-bell me-2"></i>Notifications
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <a href="user-profile.html" class="profile-link d-flex align-items-center text-decoration-none">
+                        <!-- Updated image path for client folder -->
+                        <img src="../img/dummy-image.webp" 
+                             alt="Profile Picture" 
+                             class="profile-pic rounded-circle me-2"
+                             style="width: 40px; height: 40px; object-fit: cover; border: 2px solid rgba(255,255,255,0.3);">
+                        <span class="user-info d-none d-md-block">Jeet Kumar</span>
+                    </a>
+                    <!-- Updated logout link to point to root -->
+                    <a class="btn btn-logout btn-sm" href="../login.html">
+                        <i class="fas fa-sign-out-alt me-1"></i>Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid px-4 py-4">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h1 class="fw-bold mb-2 text-balance">Notifications</h1>
+                <p class="text-muted mb-0">Stay updated with your tasks and project activities</p>
+            </div>
+            <div class="d-flex gap-3">
+                <button class="btn btn-primary">
+                    <i class="fas fa-check-double me-2"></i>Mark All Read
+                </button>
+                <button class="btn btn-outline-primary">
+                    <i class="fas fa-cog me-2"></i>Settings
+                </button>
+            </div>
+        </div>
+
+        <!-- Clean notification categories -->
+        <div class="row g-4 mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="dashboard-card p-4 text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-tasks fa-2x" style="color: #164e63;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1" style="color: #164e63;">5</h3>
+                    <p class="text-muted mb-0">Task Updates</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="dashboard-card p-4 text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-comments fa-2x" style="color: #4db6ac;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1" style="color: #4db6ac;">3</h3>
+                    <p class="text-muted mb-0">Comments</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="dashboard-card p-4 text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-clock fa-2x text-warning"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1 text-warning">2</h3>
+                    <p class="text-muted mb-0">Reminders</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="dashboard-card p-4 text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-project-diagram fa-2x text-success"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1 text-success">1</h3>
+                    <p class="text-muted mb-0">Project Updates</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clean notifications list -->
+        <div class="dashboard-card">
+            <div class="p-4 border-bottom">
+                <h4 class="fw-bold mb-0">Recent Notifications</h4>
+            </div>
+            <div class="notification-list">
+                <div class="notification-item p-4 border-bottom">
+                    <div class="d-flex align-items-start">
+                        <div class="notification-icon me-3">
+                            <i class="fas fa-tasks" style="color: #164e63;"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h6 class="fw-bold mb-0">New Task Assigned</h6>
+                                <small class="text-muted">2 hours ago</small>
+                            </div>
+                            <p class="text-muted mb-2">Complete Website Design has been assigned to you with high priority.</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary">View Task</button>
+                                <button class="btn btn-sm btn-outline-secondary">Mark Read</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-item p-4 border-bottom">
+                    <div class="d-flex align-items-start">
+                        <div class="notification-icon me-3">
+                            <i class="fas fa-comment" style="color: #4db6ac;"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h6 class="fw-bold mb-0">New Comment on Task</h6>
+                                <small class="text-muted">4 hours ago</small>
+                            </div>
+                            <p class="text-muted mb-2">John Doe commented on your task "Database Migration": "Great progress on the schema design!"</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary">Reply</button>
+                                <button class="btn btn-sm btn-outline-secondary">Mark Read</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-item p-4 border-bottom">
+                    <div class="d-flex align-items-start">
+                        <div class="notification-icon me-3">
+                            <i class="fas fa-clock text-warning"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h6 class="fw-bold mb-0">Deadline Reminder</h6>
+                                <small class="text-muted">6 hours ago</small>
+                            </div>
+                            <p class="text-muted mb-2">Task "Review Code Changes" is due tomorrow. Don't forget to complete it on time.</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary">View Task</button>
+                                <button class="btn btn-sm btn-outline-secondary">Dismiss</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-item p-4 border-bottom">
+                    <div class="d-flex align-items-start">
+                        <div class="notification-icon me-3">
+                            <i class="fas fa-project-diagram text-success"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h6 class="fw-bold mb-0">Project Milestone Completed</h6>
+                                <small class="text-muted">1 day ago</small>
+                            </div>
+                            <p class="text-muted mb-2">Congratulations! The "Mobile App Development" project has reached 100% completion.</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary">View Project</button>
+                                <button class="btn btn-sm btn-outline-secondary">Mark Read</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-item p-4">
+                    <div class="d-flex align-items-start">
+                        <div class="notification-icon me-3">
+                            <i class="fas fa-users" style="color: #164e63;"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h6 class="fw-bold mb-0">Team Meeting Reminder</h6>
+                                <small class="text-muted">1 day ago</small>
+                            </div>
+                            <p class="text-muted mb-2">Weekly team meeting scheduled for tomorrow at 10:00 AM. Please prepare your status updates.</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary">Add to Calendar</button>
+                                <button class="btn btn-sm btn-outline-secondary">Dismiss</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-5 py-4" style="background-color: #f8f9fa; border-top: 1px solid #e9ecef;">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 TaskMaster. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end gap-4 mt-2 mt-md-0">
+                        <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+                        <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                        <a href="#" class="text-muted text-decoration-none">Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
